@@ -1,3 +1,3 @@
 # suywakrose
 Website / Linktree
-meow!
+the goat
