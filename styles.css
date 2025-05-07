@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
+:root {
+    --star-color: #a3c1da; /* star color */
+    --background-color: #ffff; /* background color */
+}
+
 body {
     font-family: 'Pixelify Sans', Arial, sans-serif;
     margin: 0;
@@ -8,6 +13,96 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    z-index: -1; /* Place it behind all content */
+    overflow: hidden;
+}
+
+.animated-background::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 
+    100px 200px var(--star-color), -150px -300px var(--star-color),
+    200px -100px var(--star-color), -250px 150px var(--star-color),
+    300px 50px var(--star-color), -350px -200px var(--star-color),
+    400px -150px var(--star-color), -450px 250px var(--star-color),
+    500px 100px var(--star-color), -550px -300px var(--star-color),
+    600px -400px var(--star-color), -700px 500px var(--star-color),
+    800px 600px var(--star-color), -900px -700px var(--star-color),
+    100px -500px var(--star-color), -200px 400px var(--star-color),
+    300px -600px var(--star-color), -400px 700px var(--star-color),
+    500px -800px var(--star-color), -600px 900px var(--star-color),
+    700px -1000px var(--star-color), -800px 1100px var(--star-color),
+    900px -1200px var(--star-color), -1000px 1300px var(--star-color),
+    1100px -1400px var(--star-color), -1200px 1500px var(--star-color),
+    1300px -1600px var(--star-color), -1400px 1700px var(--star-color),
+    1240px -1300px var(--star-color), -1320px 1600px var(--star-color),
+    1500px -1800px var(--star-color), -1600px 1900px var(--star-color);
+    animation: fly-toward-user 5s linear infinite;
+}
+
+.animated-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+    z-index: -1;
+    animation: create-stars 1s infinite;
+}
+
+@keyframes star-animation {
+    0% {
+        background: radial-gradient(circle, var(--star-color) 2px, transparent 2px) 0 0,
+                    radial-gradient(circle, var(--star-color) 2px, transparent 2px) 50px 50px,
+                    radial-gradient(circle, var(--star-color) 2px, transparent 2px) 100px 100px;
+        background-size: 200px 200px;
+        transform: scale(1);
+    }
+    100% {
+        background: radial-gradient(circle, var(--star-color) 2px, transparent 2px) 0 0,
+                    radial-gradient(circle, var(--star-color) 2px, transparent 2px) 50px 50px,
+                    radial-gradient(circle, var(--star-color) 2px, transparent 2px) 100px 100px;
+        background-size: 100px 100px;
+        transform: scale(2);
+    }
+}
+
+@keyframes fly-toward-user {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes create-stars {
+    0% {
+        box-shadow: random-stars();
+    }
+    100% {
+        transform: scale(1.5);
+    }
 }
 
 .outer-container {
@@ -16,7 +111,6 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #ffff;
 }
 
 .container {
