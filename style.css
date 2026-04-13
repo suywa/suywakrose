@@ -1,0 +1,74 @@
+/* Core Setup */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: #000; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; color: #fff; }
+
+/* Background */
+#bg-video { position: fixed; inset: 0; min-width: 100%; min-height: 100%; z-index: -1; filter: brightness(0.25); object-fit: cover; }
+
+/* Entry Screen */
+#enter-screen { position: fixed; inset: 0; background: #000; display: flex; justify-content: center; align-items: center; z-index: 1000; cursor: pointer; letter-spacing: 5px; font-size: 0.8rem; transition: opacity 0.8s ease; }
+
+/* Main Glass UI */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 80px;
+    border-radius: 35px;
+    text-align: center;
+    width: fit-content;
+    min-width: 650px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+.profile-pic { width: 110px; height: 110px; border-radius: 50%; margin-bottom: 25px; border: 2px solid rgba(255, 255, 255, 0.2); object-fit: cover; }
+
+/* Typewriter Title */
+.username { font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 10px; text-shadow: 0 0 15px rgba(255,255,255,0.3); display: flex; justify-content: center; }
+.typewriter {
+    display: inline-block; overflow: hidden; border-right: 2px solid #fff; white-space: nowrap; width: 0;
+    animation: typing 4s steps(5) infinite, blink-caret 0.75s step-end infinite;
+}
+@keyframes typing { 0% { width: 0 } 30%, 80% { width: 6.5ch } 90%, 100% { width: 0 } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #fff } }
+
+/* Volume Control */
+.volume-container { position: absolute; top: 20px; left: 20px; }
+.volume-controls {
+    display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+    width: 45px; transition: width 0.3s ease; overflow: hidden;
+}
+.volume-controls:hover { width: 160px; }
+#mute-btn { cursor: pointer; min-width: 25px; }
+#volume-slider { margin-left: 10px; width: 100px; accent-color: #fff; cursor: pointer; }
+
+/* Enhanced Discord Box */
+#discord-status-box { background: rgba(0, 0, 0, 0.4); padding: 15px; border-radius: 18px; margin: 0 auto 45px; display: flex; align-items: center; gap: 15px; width: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+#discord-pfp { width: 45px; height: 45px; border-radius: 50%; background: #222; }
+.discord-info { display: flex; flex-direction: column; align-items: flex-start; }
+.discord-header { display: flex; align-items: center; gap: 8px; }
+#discord-name { font-weight: 600; font-size: 0.9rem; }
+#status-text { font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); }
+.status-indicator { width: 10px; height: 10px; border-radius: 50%; }
+
+/* Social Links */
+.links-wrapper { display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 50px; }
+.links-row { display: flex; gap: 25px; align-items: center; }
+.link-item { color: #fff; text-decoration: none; font-size: 1.6rem; transition: 0.3s; display: flex; align-items: center; }
+.link-item:hover { transform: scale(1.4) translateY(-5px); filter: drop-shadow(0 0 15px #fff); }
+.wing-img { width: 1.6rem; height: 1.6rem; object-fit: contain; filter: drop-shadow(#fff 0 0 7px); opacity: 0.8; }
+.custom-icon-svg { width: 1.3rem; height: 1.3rem; }
+.custom-icon-img { height: 1.3rem; width: auto; }
+
+/* Progress Section */
+.progress-section { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.music-info { font-size: 0.85rem; letter-spacing: 1px; }
+.track-name { font-weight: 700; }
+.track-name::after { content: " · "; opacity: 0.5; }
+.artist-name { color: rgba(255,255,255,0.7); }
+.progress-container { display: flex; align-items: center; gap: 15px; width: 320px; color: rgba(255,255,255,0.4); font-size: 0.75rem; }
+.progress-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+#progress-fill { height: 100%; width: 0%; background: #fff; box-shadow: 0 0 10px #fff; }
+
+.hidden { opacity: 0; pointer-events: none; }

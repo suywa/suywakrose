@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>suywa | links</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <video autoplay loop id="bg-video">
+        <source src="https://cdn.discordapp.com/attachments/1349311955277582347/1493271724773343242/background.mp4?ex=69de5d2a&is=69dd0baa&hm=b96674b6de098fa724c1715d4ba276bcafd86df31f62db332d06f2753ce91c07&" type="video/mp4">
+    </video>
+
+    <div id="enter-screen" onclick="startSite()">
+        <p>[ CLICK TO ENTER ]</p>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <div class="glass-card">
+            
+            <div class="volume-container">
+                <div class="volume-controls">
+                    <i class="fa-solid fa-volume-high" id="mute-btn" onclick="toggleMute()"></i>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+
+            <img src="assets/icon.jpg" alt="pfp" class="profile-pic">
+            
+            <h1 class="username">
+                <span class="typewriter">suywa</span>
+            </h1>
+
+            <div id="discord-status-box">
+                <img id="discord-pfp" src="" alt="">
+                <div class="discord-info">
+                    <div class="discord-header">
+                        <span id="discord-name">Loading...</span>
+                        <div class="status-indicator" id="status-dot"></div>
+                    </div>
+                    <span id="status-text">Fetching status...</span>
+                </div>
+            </div>
+            
+            <div class="links-wrapper">
+                <div class="wing-container">
+                    <img class="wing-img" src="https://r2.guns.lol/404d65ce-d73e-4af9-ade0-f94920d3e34a.webp" alt="">
+                </div>
+                
+                <div class="links-row">
+                    <a href="https://roblox.com/suywakrose" target="_blank" class="link-item" title="Roblox">
+                        <svg class="custom-icon-svg" viewBox="0.16 0 23.68 24" fill="currentColor">
+                            <path d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.last.fm/user/suywa" target="_blank" class="link-item"><i class="fa-brands fa-lastfm"></i></a>
+                    <a href="https://steamcommunity.com/id/suywakrose/" target="_blank" class="link-item"><i class="fa-brands fa-steam"></i></a>
+                    <a href="https://github.com/suywa" target="_blank" class="link-item"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://open.spotify.com/user/dwywum18tq61hcbchq39cz9xu?si=3c64a44e9c2c455b" target="_blank" class="link-item"><i class="fa-brands fa-spotify"></i></a>
+                    <a href="https://discord.com/users/1097843326142656603" target="_blank" class="link-item"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://anilist.co/user/suywakrose/" target="_blank" class="link-item" title="AniList">
+                        <img src="https://r2.guns.lol/6ebf64ad-6b5e-4357-908a-f373a94494bb.webp" class="custom-icon-img" alt="AniList">
+                    </a>
+                </div>
+
+                <div class="wing-container">
+                    <img class="wing-img" src="https://r2.guns.lol/98c3e65a-efb8-4aee-9a03-a11de4a8ad95.webp" alt="">
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="music-info">
+                    <span class="track-name">Avid</span>
+                    <span class="artist-name">SawanoHiroyuki[nZk]</span>
+                </div>
+                <div class="progress-container">
+                    <span id="current-time">00:00</span>
+                    <div class="progress-bar"><div id="progress-fill"></div></div>
+                    <span id="duration">00:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
